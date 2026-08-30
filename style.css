@@ -1,0 +1,145 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: white;
+}
+
+header {
+    text-align: left;
+}
+.head_top{
+    background-color: #0066FF;
+    min-height: 30px;
+}
+.head{
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+}
+.foot{
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+}
+.wave-canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#logo {
+    width: 300px;
+    height: auto;
+    margin-left: auto;
+}
+
+.footer {
+    background-color: #0066FF;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+.footer a{
+    color: white;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+h2{
+    padding-bottom: 3%;
+}
+h1, h2 {
+    padding-left: 5%;
+    color: white;
+}
+h3{
+    text-align: center;
+}
+#logo{
+    padding:15%;
+    height: 150px;
+    width:auto;
+    margin-left:auto;
+    }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.flex-container-head {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-two {
+    justify-content: space-between;
+}
+
+.flex-three {
+    justify-content: space-around;
+    text-align: justify;
+}
+.block{
+    text-align: justify;
+}
+
+.entry {
+    background-color: #fff;
+   
+    padding: 1rem;
+    flex: 1 1 300px;
+    margin: 0 0.5rem;
+    /*
+     border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
+}
+#coding{
+    width: 100%;
+    height: auto;
+    }
+
+.entry:first-child {
+    margin-left: 0;
+}
+
+.entry:last-child {
+    margin-right: 0;
+}
+.contact{
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2rem;
+   
+}
+   
+.contact img{
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.contact p{
+    padding: 2rem;
+}
+
