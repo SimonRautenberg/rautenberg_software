@@ -11,6 +11,55 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="bilder/rautenberg_logo_white.png">
 <script src="js/wave-animation.js?v=20260827" defer></script>
+<script src="js/faq-accordion.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet Softwareentwicklung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ich berechne einen Stundensatz von 80 €. Ein Projekt kostet bei mir in der Regel mindestens 1.500 €. Nach oben gibt es keine feste Grenze – der Aufwand hängt vom Umfang und den Anforderungen des Projekts ab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit welchen Programmiersprachen arbeitest du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ich arbeite hauptsächlich mit PHP, JavaScript und TypeScript. In meiner beruflichen Laufbahn hatte ich außerdem Berührungspunkte mit C++, C#, Python, Java und mehr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Machst du auch Webseiten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Mein Schwerpunkt liegt allerdings eher auf individueller Softwareentwicklung. Webseiten können dabei selbst eine Softwarelösung sein oder als Benutzeroberfläche für eine Anwendung dienen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ich habe eine Idee, bin mir aber bei der Umsetzung nicht sicher. Kann ich dich einfach anrufen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na klar. Ich höre mir deine Idee oder deine Problemstellung gerne an und wir schauen gemeinsam, welche Lösung sinnvoll sein könnte. Das erste Gespräch ist kostenlos und unverbindlich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kannst du mir ein Programm mit KI erstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Es gibt inzwischen eine Vielzahl leistungsfähiger KI-Modelle, die sich für unterschiedliche Anwendungen einsetzen lassen. Ich kann diese Modelle in individuelle Softwarelösungen integrieren und beispielsweise eigene Anwendungen entwickeln, die Texte analysieren, Informationen verarbeiten oder Arbeitsabläufe automatisieren. Ob und wie KI für ein konkretes Problem sinnvoll eingesetzt werden kann, klären wir am besten anhand des jeweiligen Anwendungsfalls."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
     <header>
@@ -125,6 +174,64 @@
     <footer>
         <div class="foot">
             <canvas class="wave-canvas" data-wave="up"></canvas>
+        </div>
+        <div class="faq" id="faq">
+            <div class="faq-container">
+                <h2>Häufig gestellte Fragen</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Was kostet Softwareentwicklung?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <p>Ich berechne einen Stundensatz von 80 €.</p>
+                            <p>Ein Projekt kostet bei mir in der Regel mindestens 1.500 €. Nach oben gibt es keine feste Grenze – der Aufwand hängt vom Umfang und den Anforderungen des Projekts ab.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Mit welchen Programmiersprachen arbeitest du?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <p>Ich arbeite hauptsächlich mit PHP, JavaScript und TypeScript.</p>
+                            <p>In meiner beruflichen Laufbahn hatte ich außerdem Berührungspunkte mit C++, C#, Python, Java und mehr.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Machst du auch Webseiten?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <p>Ja. Mein Schwerpunkt liegt allerdings eher auf individueller Softwareentwicklung.</p>
+                            <p>Webseiten können dabei selbst eine Softwarelösung sein oder als Benutzeroberfläche für eine Anwendung dienen.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Ich habe eine Idee, bin mir aber bei der Umsetzung nicht sicher. Kann ich dich einfach anrufen?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <p>Na klar. Ich höre mir deine Idee oder deine Problemstellung gerne an und wir schauen gemeinsam, welche Lösung sinnvoll sein könnte.</p>
+                            <p>Das erste Gespräch ist kostenlos und unverbindlich.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Kannst du mir ein Programm mit KI erstellen?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <p>Ja.</p>
+                            <p>Es gibt inzwischen eine Vielzahl leistungsfähiger KI-Modelle, die sich für unterschiedliche Anwendungen einsetzen lassen. Ich kann diese Modelle in individuelle Softwarelösungen integrieren und beispielsweise eigene Anwendungen entwickeln, die Texte analysieren, Informationen verarbeiten oder Arbeitsabläufe automatisieren.</p>
+                            <p>Ob und wie KI für ein konkretes Problem sinnvoll eingesetzt werden kann, klären wir am besten anhand des jeweiligen Anwendungsfalls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer"><a href="impressum.html">Datenschutz & Impressum</a></div>
     </footer>
