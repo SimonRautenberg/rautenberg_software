@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Software-Lösungen für kleine und mittlere Unternehmen aus einer Hand.">
     <title>Rautenberg Software Berlin</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="bilder/rautenberg_logo_white.png">
-<script src="js/wave-animation.js?v=20260827" defer></script>
-<script src="js/faq-accordion.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261002b">
+    <link rel="preload" href="fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0066FF">
+    <script src="js/wave-animation.js?v=20261002" defer></script>
+    <script src="js/faq-accordion.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,117 +65,173 @@
 </script>
 </head>
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><path d="m10 12.5-2 2 2 2"/><path d="m14 12.5 2 2-2 2"/></symbol>
+        <symbol id="i-shop" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+        <symbol id="i-auto" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9"/><path d="M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3v4.2h-4.2"/><path d="M5.5 21v-4.2h4.2"/><circle cx="12" cy="12" r="2.5"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></symbol>
+        <symbol id="i-talk" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20V5z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+        <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M6 3l13 7.5-5.8 1.7L10.5 18 6 3z"/><path d="m13.2 12.2 4.8 4.8"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4.1A8 8 0 1 1 20 12z"/><path d="M9 10.5c0 2.3 2.2 4.5 4.5 4.5l1-1.4-1.6-.9-.7.6c-.8-.3-1.5-1-1.8-1.8l.6-.7-.9-1.6L9 10.5z"/></symbol>
+        <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></symbol>
+    </svg>
     <header>
-        <div class="flex-container-head flex-two head_top">
-            <div class="head_top">
+        <div class="flex-container-head head_top">
+            <div>
                 <h1>Rautenberg Software Berlin</h1>
                 <h2>Software-Lösungen für kleine und mittlere Unternehmen aus einer Hand.</h2>
             </div>
-            <div class="head_top">
-                <img src="bilder/rautenberg_logo_white.png" alt="logo" id="logo">
-            </div>
-            </div>
+            <img src="bilder/rautenberg_logo_white.png" alt="Rautenberg Software Logo" id="logo">
         </div>
         <div class="head">
             <canvas class="wave-canvas" data-wave="down"></canvas>
         </div>
     </header>
     <main>
-        
-        <div class="flex-container flex-two">
-            <div class="entry">
-                <div>
-                    <p>
-                        Sie möchten wiederkehrende Aufgaben automatisieren, Zeit sparen und Fehler reduzieren?<br>
-                        Sie möchten einen Onlineshop aufbauen, um auch außerhalb Ihrer Öffnungszeiten zu verkaufen?<br>
-                        Sie benötigen ein System, um Produkte, Aufträge oder interne Abläufe besser zu verwalten?<br>
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        Rautenberg Software ist eine Einzelunternehmung aus Berlin. Ich unterstütze kleine und mittelständische Unternehmen bei der Digitalisierung und Automatisierung ihrer Geschäftsprozesse.
-                        Dazu entwickle ich maßgeschneiderte Webanwendungen, Shopsysteme und Automatisierungen, die auf den jeweiligen Ablauf des Unternehmens zugeschnitten sind. 
-                        Von der ersten Idee über die Entwicklung bis hin zum Betrieb und der Weiterentwicklung.
-                        Als Einzelunternehmer gibt es keine Umwege in der Kommunikation: Sie sprechen direkt mit der Person, die Ihr Projekt entwickelt und umsetzt.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="entry"><img src="bilder/coding-5-33.png" alt="Developer" id="coding"></div>
-        </div>
-        <div class="flex-container flex-three block">
-            <div class="entry">
-                <h3>Web-Applications</h3>
+        <section class="wrap intro">
+            <div class="intro-text">
+                <ul class="intro-questions">
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie möchten wiederkehrende Aufgaben automatisieren, Zeit sparen und Fehler reduzieren?</li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie möchten einen Onlineshop aufbauen, um auch außerhalb Ihrer Öffnungszeiten zu verkaufen?</li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie benötigen ein System, um Produkte, Aufträge oder interne Abläufe besser zu verwalten?</li>
+                </ul>
                 <p>
-                    Sie möchten eine Webseite, die mehr kann als einfach nur hübsch auszusehen?
-                    Sie brauchen eine Berechnung, wie z. B. einen Angebotsrechner?
-                    Sie möchten eine Webseite mit einer Datenbankanbindung, um Vorgänge zu synchronisieren?
-                    Ich entwickle Ihnen auch gerne Lösungen für Ihre komplexen Probleme.
+                    Rautenberg Software ist eine Einzelunternehmung aus Berlin. Ich unterstütze kleine und mittelständische Unternehmen bei der Digitalisierung und Automatisierung ihrer Geschäftsprozesse.
+                    Dazu entwickle ich maßgeschneiderte Webanwendungen, Shopsysteme und Automatisierungen, die auf den jeweiligen Ablauf des Unternehmens zugeschnitten sind.
+                    Von der ersten Idee über die Entwicklung bis hin zum Betrieb und der Weiterentwicklung.
+                    Als Einzelunternehmer gibt es keine Umwege in der Kommunikation: Sie sprechen direkt mit der Person, die Ihr Projekt entwickelt und umsetzt.
                 </p>
+            </div>
+            <img src="bilder/coding-5-33.png" alt="Entwickler am Laptop" id="coding">
+        </section>
 
-            
+        <section class="wrap services" aria-labelledby="services-title">
+            <div class="section-head">
+                <p class="eyebrow">Leistungen</p>
+                <h2 id="services-title">Was ich für Sie entwickle</h2>
             </div>
-            <div class="entry">
-                 <h3>Online-Shops</h3>
-                 <p>
-                    Sie möchten einen Onlineshop eröffnen, um Ihre Reichweite zu erhöhen und außerhalb Ihrer Öffnungszeiten zu verkaufen?
-                    Ich erstelle Ihnen gerne einen Onlineshop nach Ihren Vorstellungen.
-                    Ein einfaches Grundgerüst zu erstellen dauert nur wenige Tage.
-
-                 </p>
-            </div>
-            <div class="entry">
-                <h3>SEO</h3>
-                 <p>
-                    Sie möchten mehr Sichtbarkeit, damit Ihre Kunden Sie finden? 
-                    Eine gezielte Suchmaschinenoptimierung sorgt dafür, 
-                    dass Ihre Webseite genau dann erscheint, wenn potenzielle Kunden nach Ihren Leistungen suchen. 
-                    Erhöhte Sichtbarkeit führt dazu, dass mehr Interessenten auf Ihre Seite gelangen. 
-                    Damit steigt die Chance auf Anfragen, Verkäufe und langfristige Kundenbeziehungen.
-                 </p>
-            </div>
-        </div>
-        <div class="flex-container flex-three block">
-            <div class="entry">
-                <h3>Automatisierung</h3>
-                 <p>
-                    Sie möchten wiederkehrende Aufgaben, die Sie haben, automatisieren, um Zeit zu sparen und Fehler zu vermeiden?
-                    Gerne entwickle ich Ihnen eine effiziente und zuverlässige Lösung, die Ihre Abläufe vereinfacht und Sie dauerhaft entlastet. 
-                 </p>
-            </div>
-            <div class="entry">
-                    <h3>Wartung & Hosting</h3>
+            <div class="card-grid">
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-web"/></svg></span>
+                    <h3>Web-Applications</h3>
+                    <p>
+                        Sie möchten eine Webseite, die mehr kann als einfach nur hübsch auszusehen?
+                        Sie brauchen eine Berechnung, wie z. B. einen Angebotsrechner?
+                        Sie möchten eine Webseite mit einer Datenbankanbindung, um Vorgänge zu synchronisieren?
+                        Ich entwickle Ihnen auch gerne Lösungen für Ihre komplexen Probleme.
+                    </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-shop"/></svg></span>
+                    <h3>Online-Shops</h3>
+                    <p>
+                        Sie möchten einen Onlineshop eröffnen, um Ihre Reichweite zu erhöhen und außerhalb Ihrer Öffnungszeiten zu verkaufen?
+                        Ich erstelle Ihnen gerne einen Onlineshop nach Ihren Vorstellungen.
+                        Ein einfaches Grundgerüst zu erstellen dauert nur wenige Tage.
+                    </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
+                    <h3>SEO</h3>
+                    <p>
+                        Sie möchten mehr Sichtbarkeit, damit Ihre Kunden Sie finden?
+                        Eine gezielte Suchmaschinenoptimierung sorgt dafür,
+                        dass Ihre Webseite genau dann erscheint, wenn potenzielle Kunden nach Ihren Leistungen suchen.
+                        Erhöhte Sichtbarkeit führt dazu, dass mehr Interessenten auf Ihre Seite gelangen.
+                        Damit steigt die Chance auf Anfragen, Verkäufe und langfristige Kundenbeziehungen.
+                    </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-auto"/></svg></span>
+                    <h3>Automatisierung</h3>
+                    <p>
+                        Sie möchten wiederkehrende Aufgaben, die Sie haben, automatisieren, um Zeit zu sparen und Fehler zu vermeiden?
+                        Gerne entwickle ich Ihnen eine effiziente und zuverlässige Lösung, die Ihre Abläufe vereinfacht und Sie dauerhaft entlastet.
+                    </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span>
+                    <h3>Wartung &amp; Hosting</h3>
                     <p>
                         Sie haben Software, die regelmäßig die Aufmerksamkeit eines Informatikers benötigt?
                         Sie möchten eine Web-Anwendung betreiben und wissen nicht, wie?
                         Ich übernehme gerne die Wartung und den Betrieb Ihrer Software, damit alles rund läuft und Sie sich keine Sorgen machen müssen.
                     </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
+                <article class="wave-card">
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-talk"/></svg></span>
+                    <h3>Consulting</h3>
+                    <p>
+                        Sie haben technische Fragen? Sie möchten wissen, ob etwas machbar ist?
+                        Ich helfe Ihnen gerne beim Finden einer Antwort.
+                        Wenn Sie eine IT-Firma beauftragen wollen, helfe ich Ihnen gerne beim Erstellen eines Lastenheftes.
+                        Melden Sie sich ruhig, wenn Sie technische Beratung brauchen.
+                    </p>
+                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
+                </article>
             </div>
-            <div class="entry">
-                <h3>Consulting</h3>
-                 <p>
-                    Sie haben technische Fragen? Sie möchten wissen, ob etwas machbar ist? 
-                    Ich helfe Ihnen gerne beim Finden einer Antwort.
-                    Wenn Sie eine IT-Firma beauftragen wollen, helfe ich Ihnen gerne beim Erstellen eines Lastenheftes.
-                    Melden Sie sich ruhig, wenn Sie technische Beratung brauchen.
-                 </p>
+        </section>
+
+        <section class="journey" id="kontakt" aria-labelledby="journey-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Ihr Weg zum Erstgespräch</p>
+                    <h2 id="journey-title">So kommen wir ins Gespräch</h2>
+                </div>
+                <ol class="journey-steps">
+                    <li class="journey-step is-here">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-cursor"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 1 <span>Sie sind hier</span></p>
+                            <h3>Sie haben eine Idee oder ein Problem</h3>
+                            <p>Sie lesen gerade, was ich anbiete. Vielleicht wissen Sie schon genau, was Sie brauchen, vielleicht auch noch nicht. Beides ist ein guter Anfang.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 2</p>
+                            <h3>Sie schreiben mir</h3>
+                            <p>Ein paar Sätze zu Ihrem Vorhaben reichen. Per E-Mail oder WhatsApp, wie es Ihnen lieber ist.</p>
+                            <div class="step-actions">
+                                <a class="btn btn-solid" href="mailto:rautenberg-software-berlin@outlook.de"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>E-Mail schreiben</a>
+                                <a class="btn btn-outline" href="https://wa.me/4917687645326"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp schreiben</a>
+                            </div>
+                            <p class="step-note">WhatsApp: <a href="https://wa.me/4917687645326">+49 176 87645326</a></p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 3</p>
+                            <h3>Ich melde mich persönlich</h3>
+                            <p>Sie sprechen direkt mit der Person, die Ihr Projekt später entwickelt. Gemeinsam vereinbaren wir einen Termin.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step is-goal">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 4</p>
+                            <h3>Kostenloses Erstgespräch</h3>
+                            <p>Ich höre mir Ihre Idee an, und wir schauen gemeinsam, welche Lösung sinnvoll ist. Kostenlos und unverbindlich.</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
-        </div>
-        <div class="contact">
-            <a href="https://wa.me/4917687645326">
-                 <img src="bilder/whatsAppQR.png" alt="WhatsApp QR Code">
-            </a>
-           <p>Einfach klicken, scannen oder direkt per WhatsApp schreiben: +49 176 87645326</p>
-           <a href="mailto:rautenberg-software-berlin@outlook.de">
-                 <img src="bilder/message-sent-81.png" alt="gesendete E-Mail">
-            </a>
-           <p>Klicken Sie, um mir eine E-Mail zu schreiben.</p>
-        </div>
+        </section>
     </main>
-    
+
     <footer>
-        <div class="foot">
+        <div class="foot foot-ice">
             <canvas class="wave-canvas" data-wave="up"></canvas>
         </div>
         <div class="faq" id="faq">
