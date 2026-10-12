@@ -11,6 +11,9 @@
  * Jeder Wechsel wird von einer Glitch-Animation begleitet (html.is-glitching, siehe
  * style.css); die Farbe springt genau in deren Mitte. Die Dauer kommt aus der
  * CSS-Variable --glitch-duration.
+ * Pro Sitzung (sessionStorage, endet mit dem Tab) wird gemerkt, ob schon gelb bzw.
+ * rot gezeigt wurde: Nach Gelb kommt beim nächsten Laden statt Gelb direkt Rot,
+ * nach Gelb und Rot bleibt alles blau.
  */
 (function () {
     "use strict";
@@ -31,7 +34,26 @@
     var isMobile = window.matchMedia &&
         window.matchMedia("(max-width: 899px)").matches;
 
+    // sessionStorage kann gesperrt sein (z. B. privater Modus); dann läuft alles wie ohne Merker.
+    function getFlag(name) {
+        try {
+            return sessionStorage.getItem(name) === "true";
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function setFlag(name) {
+        try {
+            sessionStorage.setItem(name, "true");
+        } catch (e) {}
+    }
+
     function setTheme(theme) {
+        if (theme === "yellow" || theme === "red") {
+            setFlag(theme);
+        }
+
         if (theme === "blue") {
             delete root.dataset.theme;
         } else {
@@ -91,14 +113,14 @@
     // Plant die Folgewechsel kumulativ ab "startAt" (ms ab jetzt).
     function scheduleFollowUp(startAt) {
         var at = startAt;
-        FOLLOW_UP.forEach(function (step) {
+        followUp.forEach(function (step) {
             at += step.after;
             scheduleSwitch(at, step.theme, step.focus);
         });
     }
 
     function startTimed() {
-        scheduleSwitch(FIRST_DELAY, "yellow", ".warning-sign");
+        scheduleSwitch(FIRST_DELAY, firstStep.theme, firstStep.focus);
         scheduleFollowUp(FIRST_DELAY);
     }
 
@@ -159,6 +181,14 @@
             triggered = true;
             window.removeEventListener("scroll", onScroll);
 
+            // Rot statt Gelb: direkt zur roten Karte, ohne die Bild-Sperre
+            // (zwei überlappende Scroll-Sperren würden die Seite gesperrt lassen).
+            if (firstStep.theme !== "yellow") {
+                glitchTo(firstStep.theme, firstStep.focus);
+                scheduleFollowUp(glitchHalf());
+                return;
+            }
+
             // Bild exakt mittig ausrichten, dann kurz festhalten.
             var rect = image.getBoundingClientRect();
             var offset = rect.top + rect.height / 2 - window.innerHeight / 2;
@@ -190,6 +220,19 @@
         window.addEventListener("scroll", onScroll, { passive: true });
         check();
     }
+
+    var seenYellow = getFlag("yellow");
+    var seenRed = getFlag("red");
+    if (seenYellow && seenRed) {
+        return;
+    }
+
+    // Erster Wechsel und Folgewechsel: normal gelb → rot → blau,
+    // nach bereits gezeigtem Gelb direkt rot → blau.
+    var firstStep = seenYellow ?
+        { theme: "red", focus: FOLLOW_UP[0].focus } :
+        { theme: "yellow", focus: ".warning-sign" };
+    var followUp = seenYellow ? FOLLOW_UP.slice(1) : FOLLOW_UP;
 
     var codingImage = document.getElementById("coding");
     if (isMobile && codingImage) {

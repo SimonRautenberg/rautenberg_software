@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rautenberg-software-berlin.de/sitemap.xml

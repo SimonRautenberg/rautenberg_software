@@ -121,19 +121,25 @@ a {
     justify-content: space-between;
     align-items: center;
 }
+header .eyebrow,
 header h1,
-header h2 {
+header h2,
+header .tagline {
     padding-left: 5%;
     padding-right: 5%;
     color: var(--on-primary);
 }
+header .eyebrow {
+    padding-top: 2.5rem;
+    margin-bottom: 0.6rem;
+}
 header h1 {
     font-size: clamp(1.7rem, 5vw, 2.6rem);
     line-height: 1.2;
-    padding-top: 2.5rem;
     padding-bottom: 0.75rem;
 }
-header h2 {
+header h2,
+header .tagline {
     font-size: clamp(1.05rem, 2.6vw, 1.4rem);
     font-weight: 500;
     line-height: 1.4;
@@ -154,7 +160,7 @@ header h2 {
         height: 88px;
         margin: 1.5rem auto 0;
     }
-    header h1 {
+    header .eyebrow {
         padding-top: 1rem;
     }
 }
@@ -261,6 +267,8 @@ header h2 {
 }
 .wave-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     background: var(--blue);
     color: var(--on-primary);
@@ -273,6 +281,7 @@ header h2 {
     box-shadow: 0 14px 30px -14px color-mix(in srgb, var(--deep) 55%, transparent);
 }
 .card-icon {
+    align-self: flex-start;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -292,8 +301,44 @@ header h2 {
     margin-bottom: 0.6rem;
 }
 .wave-card p {
+    flex-grow: 1;
     font-size: 1rem;
     line-height: 1.65;
+}
+/* "Mehr"-Button der Leistungskarten; Farben folgen dem aktiven Schema */
+.card-more {
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    padding: 0.45rem 1rem;
+    border: 2px solid var(--on-primary);
+    border-radius: 999px;
+    background: var(--on-primary);
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.card-more:hover {
+    background: transparent;
+    color: var(--on-primary);
+}
+.card-more .icon {
+    width: 18px;
+    height: 18px;
+}
+.example-tag {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+    margin-bottom: 0.3rem;
 }
 .card-wave {
     position: absolute;
@@ -302,6 +347,76 @@ header h2 {
     bottom: 0;
     height: 64px;
     pointer-events: none;
+}
+
+/* Leistungs-Unterseiten */
+.service-text {
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+}
+.service-text .text-body {
+    max-width: 68ch;
+}
+.service-lead {
+    color: var(--deep);
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.service-text h2 {
+    color: var(--deep);
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    line-height: 1.25;
+    margin: 2.25rem 0 0.6rem;
+}
+.service-text p + p {
+    margin-top: 0.9rem;
+}
+.service-text ul {
+    margin: 0.9rem 0 0 1.25rem;
+}
+.service-text li + li {
+    margin-top: 0.35rem;
+}
+.service-text ul + p {
+    margin-top: 0.9rem;
+}
+.service-text {
+    display: flex;
+    flex-direction: column;
+}
+.service-visual {
+    order: -1;
+}
+.service-visual img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+}
+@media (min-width: 900px) {
+    .service-text {
+        display: grid;
+        grid-template-columns: minmax(0, 68ch) 1fr;
+        gap: 3rem;
+    }
+    .service-visual {
+        order: 0;
+        --visual-size: clamp(260px, 28vw, 400px);
+    }
+    .service-visual img {
+        position: sticky;
+        top: calc(50vh - var(--visual-size) / 2);
+        width: var(--visual-size);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+.examples {
+    padding-bottom: 2.5rem;
+}
+.back-row {
+    padding-bottom: 4rem;
 }
 
 /* Customer Journey */
