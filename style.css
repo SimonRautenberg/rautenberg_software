@@ -418,6 +418,17 @@ header .tagline {
 .back-row {
     padding-bottom: 4rem;
 }
+/* Querverweise zu den anderen Leistungen (interne Verlinkung) */
+.more-services {
+    padding-bottom: 4rem;
+}
+.more-services-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
 
 /* Customer Journey */
 .journey {

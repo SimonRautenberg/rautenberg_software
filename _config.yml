@@ -1,0 +1,4 @@
+# GitHub Pages baut die Seite mit Jekyll. Arbeitsdateien hier ausschließen,
+# damit sie nicht als eigene Seiten veröffentlicht werden (z. B. /faq.html).
+exclude:
+  - faq.md
