@@ -16,7 +16,7 @@
         { alpha: 0.28, baseline: 0.62, a1: 0.12, a2: 0.06, k1: 0.014, k2: 0.019, s1: -0.00038, s2: 0.00057, off: 2.1 }
     ];
 
-    // TEMP: Im gelben Schema werden die Wellen zu einem wandernden Zickzack.
+    // Im gelben Schema werden die Wellen zu einem wandernden Zickzack (siehe theme-switcher.js).
     var zigzag = false;
     var ZIGZAG_BAND = { amp: 0.16, period: 64, speed: 0.02 };
     var ZIGZAG_CARD_LAYERS = [

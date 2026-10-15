@@ -812,7 +812,7 @@ body.legal {
     background: var(--ice);
 }
 
-/* TEMP: Theme-spezifische Inhalte */
+/* Theme-spezifische Inhalte (Farbschema-Ablauf, siehe js/theme-switcher.js) */
 [data-theme="yellow"] #logo {
     filter: url(#logo-yellow);
 }
