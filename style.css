@@ -441,6 +441,104 @@ header .tagline {
     margin-bottom: 2rem;
 }
 
+/* Ratgeber: Teaser auf der Startseite, Übersicht und Artikel */
+.ratgeber-teaser {
+    padding-bottom: 4rem;
+}
+.ratgeber-teaser .card-grid {
+    margin-bottom: 2rem;
+}
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-top: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+}
+.breadcrumb li + li::before {
+    content: "›";
+    margin-right: 0.35rem;
+}
+.breadcrumb [aria-current] {
+    opacity: 0.75;
+}
+.article-meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 1.25rem;
+}
+.service-text .article-meta + p {
+    margin-top: 0;
+}
+.service-text ol {
+    margin: 0.9rem 0 0 1.25rem;
+}
+.service-text ol + p {
+    margin-top: 0.9rem;
+}
+.service-text .article-tip {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--ice);
+}
+.service-text .article-tip + p {
+    margin-top: 1.5rem;
+}
+.table-scroll {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+.article-table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+.article-table th,
+.article-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+}
+.article-table thead th {
+    color: var(--deep);
+    border-bottom-width: 2px;
+}
+.article-table tbody th {
+    color: var(--deep);
+    font-weight: 500;
+}
+.ratgeber-intro {
+    max-width: 68ch;
+    padding-top: 1.5rem;
+}
+.ratgeber-list {
+    list-style: none;
+    max-width: 68ch;
+    padding-top: 0.5rem;
+    padding-bottom: 3.5rem;
+}
+.ratgeber-list li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+}
+.ratgeber-list h2 {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    line-height: 1.3;
+    margin: 0.2rem 0 0.4rem;
+}
+.ratgeber-list h2 a {
+    color: var(--deep);
+}
+.ratgeber-list .eyebrow {
+    margin-bottom: 0;
+}
+
 /* Customer Journey */
 .journey {
     background: var(--ice);

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+    VORLAGE FÜR NEUE RATGEBER-ARTIKEL
+    Dateien mit "_" am Anfang veröffentlicht GitHub Pages nicht, diese Vorlage bleibt also unsichtbar.
+
+    So legen Sie einen neuen Artikel an:
+    1. Diese Datei kopieren und umbenennen, z. B. ratgeber/e-rechnung-pflicht.html (Kleinbuchstaben, Bindestriche, keine Umlaute)
+    2. Alle Stellen in [ECKIGEN KLAMMERN] ersetzen, auch im JSON-Block im <head>
+    3. Den Artikel oben in ratgeber/index.html eintragen
+    4. Auf der Startseite (index.html, Sektion "Ratgeber") die älteste Karte durch den neuen Artikel ersetzen
+    5. Die URL in sitemap.xml eintragen
+    6. Optional: unter "Weitere Ratgeber" passende Artikel verlinken
+    Diesen Kommentar im neuen Artikel löschen.
+-->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[BESCHREIBUNG FÜR GOOGLE, ca. 120–155 Zeichen]">
+    <title>[TITEL, max. ca. 45 Zeichen] | Rautenberg Software</title>
+    <link rel="stylesheet" href="../style.css?v=20261020a">
+    <link rel="preload" href="../fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="../favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#0066FF">
+    <link rel="canonical" href="https://rautenberg-software-berlin.de/ratgeber/[DATEINAME].html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="[TITEL] | Rautenberg Software">
+    <meta property="og:description" content="[BESCHREIBUNG]">
+    <meta property="og:url" content="https://rautenberg-software-berlin.de/ratgeber/[DATEINAME].html">
+    <meta property="og:image" content="https://rautenberg-software-berlin.de/icon-512.png">
+    <script src="../js/wave-animation.js?v=20261003b" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "[ÜBERSCHRIFT DES ARTIKELS]",
+      "description": "[BESCHREIBUNG]",
+      "image": "https://rautenberg-software-berlin.de/bilder/[BILD].webp",
+      "datePublished": "[JJJJ-MM-TT]",
+      "dateModified": "[JJJJ-MM-TT]",
+      "inLanguage": "de-DE",
+      "mainEntityOfPage": "https://rautenberg-software-berlin.de/ratgeber/[DATEINAME].html",
+      "author": { "@type": "Person", "name": "Simon Rautenberg", "url": "https://rautenberg-software-berlin.de/ueber-mich.html" },
+      "publisher": { "@type": "Organization", "name": "Rautenberg Software Berlin", "url": "https://rautenberg-software-berlin.de/", "logo": { "@type": "ImageObject", "url": "https://rautenberg-software-berlin.de/icon-512.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://rautenberg-software-berlin.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://rautenberg-software-berlin.de/ratgeber/" },
+        { "@type": "ListItem", "position": 3, "name": "[KURZTITEL]" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+        <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M6 3l13 7.5-5.8 1.7L10.5 18 6 3z"/><path d="m13.2 12.2 4.8 4.8"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4.1A8 8 0 1 1 20 12z"/><path d="M9 10.5c0 2.3 2.2 4.5 4.5 4.5l1-1.4-1.6-.9-.7.6c-.8-.3-1.5-1-1.8-1.8l.6-.7-.9-1.6L9 10.5z"/></symbol>
+        <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></symbol>
+    </svg>
+    <header>
+        <div class="flex-container-head head_top">
+            <div>
+                <p class="eyebrow">Ratgeber</p>
+                <h1>[ÜBERSCHRIFT DES ARTIKELS]</h1>
+                <p class="tagline">[UNTERZEILE IN EINEM SATZ]</p>
+            </div>
+            <img src="../bilder/rautenberg_logo_white.png" alt="Rautenberg Software Logo" id="logo" width="572" height="543">
+        </div>
+        <div class="head">
+            <canvas class="wave-canvas" data-wave="down"></canvas>
+        </div>
+    </header>
+    <main>
+        <nav class="wrap breadcrumb" aria-label="Brotkrumen">
+            <ol>
+                <li><a href="../">Start</a></li>
+                <li><a href="./">Ratgeber</a></li>
+                <li aria-current="page">[KURZTITEL]</li>
+            </ol>
+        </nav>
+
+        <article class="wrap service-text">
+            <div class="text-body">
+                <p class="article-meta">Von <a href="../ueber-mich.html">Simon Rautenberg</a>, Softwareentwickler aus Berlin · Stand: <time datetime="[JJJJ-MM-TT]">[TT. Monat JJJJ]</time></p>
+                <p class="service-lead">[EINLEITUNG: 2–4 Sätze. Welche Frage beantwortet der Artikel, und was hat die Leserin oder der Leser davon?]</p>
+
+                <h2>[ZWISCHENÜBERSCHRIFT]</h2>
+                <p>[ABSATZ]</p>
+                <p>[ABSATZ]</p>
+
+                <h2>[ZWISCHENÜBERSCHRIFT MIT LISTE]</h2>
+                <ul>
+                    <li><strong>[STICHWORT]:</strong> [ERKLÄRUNG]</li>
+                    <li><strong>[STICHWORT]:</strong> [ERKLÄRUNG]</li>
+                </ul>
+
+                <p class="article-tip"><strong>Tipp:</strong> [OPTIONALER HINWEISKASTEN]</p>
+
+                <!-- Optionale Tabelle, z. B. für Vergleiche:
+                <div class="table-scroll">
+                    <table class="article-table">
+                        <thead>
+                            <tr><td></td><th scope="col">[SPALTE A]</th><th scope="col">[SPALTE B]</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">[ZEILE]</th><td>[WERT]</td><td>[WERT]</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                -->
+
+                <h2>Häufige Fragen</h2>
+                <h3>[FRAGE]</h3>
+                <p>[ANTWORT]</p>
+
+                <h2>Fazit</h2>
+                <p>[ZUSAMMENFASSUNG IN 2–3 SÄTZEN, mit Hinweis aufs Gespräch]</p>
+            </div>
+            <aside class="service-visual">
+                <img src="../bilder/[BILD].webp" alt="[BILDBESCHREIBUNG]" width="800" height="800" decoding="async">
+            </aside>
+        </article>
+
+        <nav class="wrap more-services" aria-labelledby="more-articles-title">
+            <div class="section-head">
+                <p class="eyebrow">Weitere Ratgeber</p>
+                <h2 id="more-articles-title">Das könnte Sie auch interessieren</h2>
+            </div>
+            <ul class="more-services-list">
+                <li><a class="btn btn-outline" href="[ANDERER-ARTIKEL].html">[TITEL DES ANDEREN ARTIKELS]</a></li>
+            </ul>
+            <a class="btn btn-solid" href="./"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>Alle Ratgeber</a>
+        </nav>
+
+        <section class="journey" id="kontakt" aria-labelledby="journey-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Ihr Weg zum Erstgespräch</p>
+                    <h2 id="journey-title">So kommen wir ins Gespräch</h2>
+                </div>
+                <ol class="journey-steps">
+                    <li class="journey-step is-here">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-cursor"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 1 <span>Sie sind hier</span></p>
+                            <h3>Sie haben eine Idee oder ein Problem</h3>
+                            <p>[1–2 SÄTZE, DIE AN DEN ARTIKEL ANKNÜPFEN]. Das ist ein guter Anfang.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 2</p>
+                            <h3>Sie schreiben mir</h3>
+                            <p>Ein paar Sätze zu Ihrem Vorhaben reichen. Per E-Mail oder WhatsApp, wie es Ihnen lieber ist.</p>
+                            <div class="step-actions">
+                                <a class="btn btn-solid" href="mailto:rautenberg-software-berlin@outlook.de"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>E-Mail schreiben</a>
+                                <a class="btn btn-outline" href="https://wa.me/4917687645326"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp schreiben</a>
+                            </div>
+                            <p class="step-note">Telefon &amp; WhatsApp: <a href="tel:+4917687645326">+49 176 87645326</a></p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 3</p>
+                            <h3>Ich melde mich persönlich</h3>
+                            <p>Sie sprechen direkt mit der Person, die Ihr Projekt später entwickelt. Gemeinsam vereinbaren wir einen Termin.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step is-goal">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 4</p>
+                            <h3>Kostenloses Erstgespräch</h3>
+                            <p>Ich höre mir Ihre Idee an, und wir schauen gemeinsam, welche Lösung sinnvoll ist. Kostenlos und unverbindlich.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="foot foot-ice">
+            <canvas class="wave-canvas" data-wave="up"></canvas>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 Rautenberg Software Berlin. Alle Rechte vorbehalten.</p>
+            <p><a href="./">Ratgeber</a> · <a href="../ueber-mich.html">Über mich</a> · <a href="../impressum.html">Impressum &amp; Datenschutz</a></p>
+        </div>
+    </footer>
+</body>
+</html>
