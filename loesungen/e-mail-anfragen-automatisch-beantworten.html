@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine KI sortiert eingehende E-Mails und legt passende Antworten als Entwurf in Ihr Postfach. Sie prüfen nur noch und klicken auf Senden. Lösungsbeispiel.">
+    <title>E-Mail-Anfragen automatisch beantworten | Rautenberg Software</title>
+    <link rel="stylesheet" href="../style.css?v=20261021a">
+    <link rel="preload" href="../fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="../favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#0066FF">
+    <link rel="canonical" href="https://rautenberg-software-berlin.de/loesungen/e-mail-anfragen-automatisch-beantworten.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="E-Mail-Anfragen automatisch beantworten | Rautenberg Software">
+    <meta property="og:description" content="Eine KI sortiert eingehende E-Mails und legt passende Antworten als Entwurf in Ihr Postfach. Sie prüfen nur noch und klicken auf Senden. Lösungsbeispiel.">
+    <meta property="og:url" content="https://rautenberg-software-berlin.de/loesungen/e-mail-anfragen-automatisch-beantworten.html">
+    <meta property="og:image" content="https://rautenberg-software-berlin.de/icon-512.png">
+    <script src="../js/wave-animation.js?v=20261003b" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "E-Mail-Anfragen automatisch vorsortieren und beantworten",
+      "description": "Eine KI sortiert eingehende E-Mails und legt passende Antworten als Entwurf in Ihr Postfach. Sie prüfen nur noch und klicken auf Senden. Lösungsbeispiel.",
+      "url": "https://rautenberg-software-berlin.de/loesungen/e-mail-anfragen-automatisch-beantworten.html",
+      "image": "https://rautenberg-software-berlin.de/bilder/automatation.webp",
+      "inLanguage": "de-DE",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rautenberg Software Berlin",
+        "url": "https://rautenberg-software-berlin.de/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rautenberg-software-berlin.de/icon-512.png"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Berlin"
+        },
+        {
+          "@type": "Country",
+          "name": "Deutschland"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://rautenberg-software-berlin.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lösungen",
+          "item": "https://rautenberg-software-berlin.de/loesungen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "E-Mails mit KI"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+        <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M6 3l13 7.5-5.8 1.7L10.5 18 6 3z"/><path d="m13.2 12.2 4.8 4.8"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4.1A8 8 0 1 1 20 12z"/><path d="M9 10.5c0 2.3 2.2 4.5 4.5 4.5l1-1.4-1.6-.9-.7.6c-.8-.3-1.5-1-1.8-1.8l.6-.7-.9-1.6L9 10.5z"/></symbol>
+        <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></symbol>
+    </svg>
+    <header>
+        <div class="flex-container-head head_top">
+            <div>
+                <p class="eyebrow">Lösung</p>
+                <h1>E-Mail-Anfragen automatisch vorsortieren und beantworten</h1>
+                <p class="tagline">Die KI schreibt den Entwurf, Sie entscheiden mit einem Klick auf „Senden“.</p>
+            </div>
+            <img src="../bilder/rautenberg_logo_white.png" alt="Rautenberg Software Logo" id="logo" width="572" height="543">
+        </div>
+        <div class="head">
+            <canvas class="wave-canvas" data-wave="down"></canvas>
+        </div>
+    </header>
+    <main>
+        <nav class="wrap breadcrumb" aria-label="Brotkrumen">
+            <ol>
+                <li><a href="../">Start</a></li>
+                <li><a href="./">Lösungen</a></li>
+                <li aria-current="page">E-Mails mit KI</li>
+            </ol>
+        </nav>
+
+        <article class="wrap service-text">
+            <div class="text-body">
+                <p class="article-meta">Lösungsbeispiel von <a href="../ueber-mich.html">Simon Rautenberg</a>, Softwareentwickler aus Berlin · Stand: <time datetime="2026-10-21">21. Oktober 2026</time></p>
+                <p class="service-lead">Jeden Morgen dasselbe Bild: Dutzende neue E-Mails, darunter Anfragen, Terminwünsche, Reklamationen und Werbung. Vieles davon sind Fragen, die Sie schon hundertmal beantwortet haben. Eine KI kann diese Arbeit vorbereiten, sodass Sie nur noch prüfen und auf „Senden“ klicken.</p>
+
+                <h2>Das Problem im Alltag</h2>
+                <p>Das Postfach ist für viele kleine Betriebe der wichtigste Kanal zu Kunden, aber auch der größte Zeitfresser. Jemand muss jede Nachricht lesen, verstehen, worum es geht, an die richtige Person weitergeben und eine Antwort schreiben. Dringendes geht zwischen Newslettern unter, und Kunden warten tagelang auf eine Rückmeldung.</p>
+
+                <h2>So funktioniert die Lösung</h2>
+                <ol>
+                    <li><strong>Lesen:</strong> Neue E-Mails werden automatisch von einer KI gelesen.</li>
+                    <li><strong>Sortieren:</strong> Die KI erkennt das Thema (Anfrage, Termin, Reklamation, Rechnung …) und wie dringend es ist. Die E-Mail bekommt eine Kategorie oder landet im passenden Ordner bzw. beim zuständigen Kollegen.</li>
+                    <li><strong>Antwort vorbereiten:</strong> Auf Basis Ihrer Informationen, etwa Öffnungszeiten, Preise, Abläufe und häufige Antworten, schreibt die KI einen passenden Antwortentwurf.</li>
+                    <li><strong>Entwurf im Postfach:</strong> Der Entwurf liegt direkt in Ihrem E-Mail-Programm, zum Beispiel Outlook oder Gmail, als Antwort auf die Nachricht.</li>
+                    <li><strong>Sie entscheiden:</strong> Passt der Text, klicken Sie auf „Senden“. Wenn nicht, ändern Sie ihn oder schreiben selbst.</li>
+                </ol>
+                <p>Nichts wird ohne Ihre Freigabe verschickt. Die KI übernimmt die Fleißarbeit, die Verantwortung bleibt bei Ihnen.</p>
+
+                <h2>Was Sie davon haben</h2>
+                <ul>
+                    <li><strong>Schnellere Antworten:</strong> Viele E-Mails sind in Sekunden statt Minuten erledigt.</li>
+                    <li><strong>Dringendes zuerst:</strong> Reklamationen und Notfälle fallen sofort auf.</li>
+                    <li><strong>Gleichbleibende Qualität:</strong> Antworten sind freundlich, vollständig und im Ton Ihres Betriebs.</li>
+                    <li><strong>Entlastung im Team:</strong> Auch Aushilfen oder neue Mitarbeiter können sicher antworten.</li>
+                </ul>
+
+                <h2>Für welche Betriebe passt das?</h2>
+                <p>Hausverwaltungen mit vielen Mieteranfragen, Online-Shops mit Fragen zu Lieferung und Rücksendung, Handwerksbetriebe mit Angebotsanfragen, Ferienwohnungen und Pensionen, Praxen und Kanzleien mit Terminwünschen. Je öfter ähnliche Fragen kommen, desto mehr bringt die Lösung.</p>
+
+                <h2>Was kostet das?</h2>
+                <p>Eine Vorsortierung mit Antwortentwürfen für ein Postfach ist oft ein kleines bis mittleres Projekt, also etwa 1.500 bis 5.000 €, je nachdem, wie viele Kategorien und Wissensquellen eingebunden werden. Mit mehreren Postfächern, Anbindung an Ihre Kundendaten oder ein Ticketsystem wird es mehr. Die Nutzung der KI kostet bei üblichen Mengen meist nur wenige Euro im Monat. Mehr im Ratgeber <a href="../ratgeber/was-kostet-individualsoftware.html">Was kostet Individualsoftware?</a>.</p>
+
+                <p class="article-tip"><strong>Datenschutz:</strong> E-Mails enthalten personenbezogene Daten. Deshalb nutze ich KI-Anbieter, die einen Vertrag zur Auftragsverarbeitung anbieten und die Daten nicht zum Training verwenden, auf Wunsch mit Servern in der EU. Werbung und Newsletter können schon vorher herausgefiltert werden.</p>
+
+                <h2>Häufige Fragen</h2>
+                <h3>Schickt die KI selbstständig E-Mails ab?</h3>
+                <p>Nein, nur wenn Sie das ausdrücklich wollen, etwa für eine einfache Eingangsbestätigung. Alle inhaltlichen Antworten landen als Entwurf und werden von Ihnen freigegeben.</p>
+                <h3>Woher weiß die KI, was sie antworten soll?</h3>
+                <p>Wir hinterlegen gemeinsam Ihre wichtigsten Informationen und Beispielantworten. Daran orientiert sich die KI. Was sie nicht weiß, lässt sie offen, statt etwas zu erfinden.</p>
+                <h3>Funktioniert das mit meinem E-Mail-Programm?</h3>
+                <p>Mit gängigen Diensten wie Microsoft 365, Gmail und den meisten Anbietern mit IMAP-Zugang in der Regel ja. Das prüfe ich vorab.</p>
+
+                <h2>Fazit</h2>
+                <p>Eine KI, die E-Mails vorsortiert und Antworten vorbereitet, spart vor allem bei wiederkehrenden Fragen viel Zeit, und Sie behalten trotzdem die volle Kontrolle. Erzählen Sie mir im kostenlosen Erstgespräch, welche E-Mails bei Ihnen am häufigsten ankommen.</p>
+            </div>
+            <aside class="service-visual">
+                <img src="../bilder/automatation.webp" alt="Illustration: KI sortiert E-Mails und schreibt Antwortentwürfe" width="800" height="800" decoding="async">
+            </aside>
+        </article>
+
+        <nav class="wrap more-services" aria-labelledby="more-solutions-title">
+            <div class="section-head">
+                <p class="eyebrow">Weitere Lösungen</p>
+                <h2 id="more-solutions-title">Das könnte Sie auch interessieren</h2>
+            </div>
+            <ul class="more-services-list">
+                <li><a class="btn btn-outline" href="angebote-und-rechnungen-schneller-erstellen.html">Angebote und Rechnungen schneller erstellen</a></li>
+                <li><a class="btn btn-outline" href="schadensmeldungen-online-erfassen.html">Schadensmeldungen und Kundenmeldungen online erfassen</a></li>
+                <li><a class="btn btn-outline" href="schriftsaetze-mit-ki-vorentwerfen.html">Dokumente und Schriftsätze mit KI vorentwerfen</a></li>
+                <li><a class="btn btn-outline" href="../automatisierung.html">Prozesse automatisieren, auch mit KI</a></li>
+            </ul>
+            <a class="btn btn-solid" href="./"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>Alle Lösungen</a>
+        </nav>
+
+        <section class="journey" id="kontakt" aria-labelledby="journey-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Ihr Weg zum Erstgespräch</p>
+                    <h2 id="journey-title">So kommen wir ins Gespräch</h2>
+                </div>
+                <ol class="journey-steps">
+                    <li class="journey-step is-here">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-cursor"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 1 <span>Sie sind hier</span></p>
+                            <h3>Sie haben eine Idee oder ein Problem</h3>
+                            <p>Sie haben gerade gelesen, wie eine KI Ihr Postfach vorsortiert und Antworten vorbereitet. Vielleicht denken Sie an die Fragen, die Sie jede Woche aufs Neue beantworten.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 2</p>
+                            <h3>Sie schreiben mir</h3>
+                            <p>Ein paar Sätze zu Ihrem Vorhaben reichen. Per E-Mail oder WhatsApp, wie es Ihnen lieber ist.</p>
+                            <div class="step-actions">
+                                <a class="btn btn-solid" href="mailto:rautenberg-software-berlin@outlook.de"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>E-Mail schreiben</a>
+                                <a class="btn btn-outline" href="https://wa.me/4917687645326"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp schreiben</a>
+                            </div>
+                            <p class="step-note">Telefon &amp; WhatsApp: <a href="tel:+4917687645326">+49 176 87645326</a></p>
+                        </div>
+                    </li>
+                    <li class="journey-step">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 3</p>
+                            <h3>Ich melde mich persönlich</h3>
+                            <p>Sie sprechen direkt mit der Person, die Ihr Projekt später entwickelt. Gemeinsam vereinbaren wir einen Termin.</p>
+                        </div>
+                    </li>
+                    <li class="journey-step is-goal">
+                        <span class="step-marker"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+                        <div>
+                            <p class="step-label">Schritt 4</p>
+                            <h3>Kostenloses Erstgespräch</h3>
+                            <p>Ich höre mir Ihre Idee an, und wir schauen gemeinsam, welche Lösung sinnvoll ist. Kostenlos und unverbindlich.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="foot foot-ice">
+            <canvas class="wave-canvas" data-wave="up"></canvas>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 Rautenberg Software Berlin. Alle Rechte vorbehalten.</p>
+            <p><a href="../">Startseite</a> · <a href="../ratgeber/">Ratgeber</a> · <a href="../ueber-mich.html">Über mich</a> · <a href="../impressum.html">Impressum &amp; Datenschutz</a></p>
+        </div>
+    </footer>
+</body>
+</html>

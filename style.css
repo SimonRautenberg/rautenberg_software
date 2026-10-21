@@ -442,11 +442,18 @@ header .tagline {
 }
 
 /* Ratgeber: Teaser auf der Startseite, Übersicht und Artikel */
-.ratgeber-teaser {
+.ratgeber-teaser,
+.loesungen-teaser,
+.loesungen-overview {
     padding-bottom: 4rem;
 }
-.ratgeber-teaser .card-grid {
+.ratgeber-teaser .card-grid,
+.loesungen-teaser .card-grid {
     margin-bottom: 2rem;
+}
+/* Branchen-Label über Karten mit "Mehr"-Button soll nicht mitwachsen */
+.wave-card .example-tag {
+    flex-grow: 0;
 }
 .breadcrumb ol {
     list-style: none;
