@@ -451,6 +451,119 @@ header .tagline {
 .loesungen-teaser .card-grid {
     margin-bottom: 2rem;
 }
+/* Karussell: Kartenreihe zum Blättern (Startseite, Lösungen).
+   Pfeile und Punkte erscheinen erst, wenn js/carousel.js läuft (.is-ready). */
+.carousel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+.carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 85%;
+    gap: 1.25rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    /* Platz für Hover-Anhebung und Schatten der Karten */
+    padding: 8px 0 1.25rem;
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+.carousel-track > * {
+    scroll-snap-align: start;
+}
+.carousel-track:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+.carousel-btn,
+.carousel-dots {
+    display: none;
+}
+.carousel.is-ready .carousel-dots {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+@media (min-width: 640px) {
+    .carousel.is-ready {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+    .carousel.is-ready .carousel-btn {
+        display: inline-flex;
+    }
+    .carousel-track {
+        grid-auto-columns: calc((100% - 1.25rem) / 2);
+    }
+}
+@media (min-width: 1000px) {
+    .carousel-track {
+        grid-auto-columns: calc((100% - 2.5rem) / 3);
+    }
+}
+.carousel-btn {
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--blue);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+.carousel-btn:hover:not(:disabled) {
+    background: var(--blue);
+    color: var(--on-primary);
+}
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+.carousel-btn .icon {
+    width: 22px;
+    height: 22px;
+}
+.carousel-btn[data-carousel-prev] .icon {
+    transform: scaleX(-1);
+}
+/* Punkte: Klickfläche 24px, sichtbarer Punkt per ::before */
+.carousel-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.carousel-dot::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--line);
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+.carousel-dot:hover::before {
+    background: var(--blue);
+}
+.carousel-dot[aria-current]::before {
+    width: 22px;
+    background: var(--blue);
+}
+
 /* Branchen-Label über Karten mit "Mehr"-Button soll nicht mitwachsen */
 .wave-card .example-tag {
     flex-grow: 0;
