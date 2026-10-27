@@ -1208,3 +1208,221 @@ html.is-glitching::after {
         display: none;
     }
 }
+
+/* Ersparnis-Rechner (js/ersparnis-rechner.js) */
+.savings {
+    padding-bottom: 3.5rem;
+}
+.savings-intro {
+    margin-top: 0.6rem;
+}
+.savings-calc {
+    background: var(--ice);
+    border-radius: var(--radius);
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.savings-hero {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+@media (min-width: 700px) {
+    .savings-hero {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: end;
+    }
+}
+.savings-label {
+    font-size: 0.9rem;
+}
+.savings-value {
+    color: var(--deep);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+.savings-figure-main .savings-value {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    line-height: 1.1;
+}
+.savings-chart {
+    position: relative;
+    background: var(--white);
+    border-radius: 12px;
+    min-height: 240px;
+}
+.savings-chart svg {
+    width: 100%;
+    height: auto;
+    touch-action: pan-y;
+    border-radius: 12px;
+}
+.sc-axis text {
+    fill: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    opacity: 0.75;
+}
+.sc-grid {
+    stroke: var(--line);
+    stroke-width: 1;
+}
+.sc-zero {
+    stroke: var(--text);
+    stroke-width: 1;
+    opacity: 0.45;
+}
+.sc-line {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.sc-area-pos {
+    fill: var(--blue);
+    opacity: 0.14;
+}
+.sc-area-neg {
+    fill: var(--text);
+    opacity: 0.08;
+}
+.sc-marker {
+    fill: var(--blue);
+    stroke: var(--white);
+    stroke-width: 2;
+}
+.sc-marker-label {
+    fill: var(--deep);
+    font-size: 13px;
+    font-weight: 500;
+    paint-order: stroke;
+    stroke: var(--white);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+}
+.sc-cross line {
+    stroke: var(--deep);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+}
+.sc-cross circle {
+    fill: var(--blue);
+    stroke: var(--white);
+    stroke-width: 2;
+}
+.sc-hit {
+    fill: transparent;
+    cursor: crosshair;
+}
+.savings-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(10, 42, 102, 0.12);
+    padding: 0.45rem 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    max-width: 240px;
+}
+.savings-tooltip strong {
+    color: var(--deep);
+}
+.savings-controls {
+    display: grid;
+    gap: 1.1rem 2rem;
+    margin-top: 1.5rem;
+}
+@media (min-width: 700px) {
+    .savings-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.savings-control {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 0.35rem 1rem;
+}
+.savings-control label {
+    font-size: 0.95rem;
+}
+.savings-control output {
+    font-family: var(--mono);
+    font-weight: 500;
+    color: var(--deep);
+}
+.savings-control input[type="range"] {
+    grid-column: 1 / -1;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 28px;
+    background: transparent;
+    cursor: pointer;
+}
+.savings-control input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--blue) var(--fill, 50%), var(--line) var(--fill, 50%));
+}
+.savings-control input[type="range"]::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--blue) var(--fill, 50%), var(--line) var(--fill, 50%));
+}
+.savings-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--white);
+    box-shadow: 0 1px 4px rgba(10, 42, 102, 0.3);
+}
+.savings-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--white);
+    box-shadow: 0 1px 4px rgba(10, 42, 102, 0.3);
+}
+.savings-control input[type="range"]:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+.savings-note {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+}
+.savings-table {
+    margin-top: 1rem;
+}
+.savings-table summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+}
+.savings-table table {
+    width: 100%;
+    margin-top: 0.75rem;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.savings-table th,
+.savings-table td {
+    text-align: right;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--line);
+}
+.savings-table th:first-child {
+    text-align: left;
+}
+.savings-table td {
+    font-family: var(--mono);
+}

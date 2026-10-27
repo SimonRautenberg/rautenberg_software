@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Wiederkehrende Aufgaben automatisieren, auch mit KI: weniger Abtippen, weniger Fehler, mehr Zeit fürs Wesentliche. Für kleine Unternehmen in Berlin.">
     <title>Prozesse automatisieren, auch mit KI | Rautenberg Software</title>
-    <link rel="stylesheet" href="style.css?v=20261021c">
+    <link rel="stylesheet" href="style.css?v=20261027a">
     <link rel="preload" href="fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
@@ -21,6 +21,7 @@
     <meta property="og:url" content="https://rautenberg-software-berlin.de/automatisierung.html">
     <meta property="og:image" content="https://rautenberg-software-berlin.de/icon-512.png">
     <script src="js/wave-animation.js?v=20261003b" defer></script>
+    <script src="js/ersparnis-rechner.js?v=20261027a" defer></script>
 </head>
 <body>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -106,6 +107,69 @@
                     <p>Erledigte Aufträge werden mit Stunden und Material automatisch zur Rechnung, im vorgeschriebenen E-Rechnungsformat. Das Büro prüft nur noch und klickt auf „Senden“.</p>
                     <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
                 </article>
+            </div>
+        </section>
+
+        <section class="wrap savings" aria-labelledby="savings-title">
+            <div class="section-head">
+                <p class="eyebrow">Ersparnis-Rechner</p>
+                <h2 id="savings-title">Was bringt Ihnen eine Automatisierung?</h2>
+                <p class="savings-intro">Rechnen Sie selbst nach, wann sich eine Automatisierung für Sie lohnt. Stellen Sie ein, wie viele Mitarbeiter wie viel Zeit sparen.</p>
+            </div>
+            <div class="savings-calc" data-savings-calc>
+                <div class="savings-hero">
+                    <div class="savings-figure savings-figure-main">
+                        <p class="savings-label" data-out="total-label">Nach 5 Jahren gespart</p>
+                        <p class="savings-value" data-out="total">81.250 €</p>
+                    </div>
+                    <div class="savings-figure">
+                        <p class="savings-label">Ersparnis pro Jahr</p>
+                        <p class="savings-value" data-out="annual">17.250 €</p>
+                    </div>
+                    <div class="savings-figure">
+                        <p class="savings-label">Amortisiert nach</p>
+                        <p class="savings-value" data-out="payback">4 Monaten</p>
+                    </div>
+                </div>
+                <div class="savings-chart"></div>
+                <noscript><p class="savings-note">Das Diagramm und die Slider benötigen JavaScript. Die Formel: Mitarbeiter × Stundenlohn × gesparte Stunden pro Woche × 46 Arbeitswochen = Ersparnis pro Jahr.</p></noscript>
+                <div class="savings-controls">
+                    <div class="savings-control">
+                        <label for="savings-employees">Mitarbeiter, die Zeit sparen</label>
+                        <output for="savings-employees">5</output>
+                        <input type="range" id="savings-employees" name="employees" min="1" max="50" step="1" value="5">
+                    </div>
+                    <div class="savings-control">
+                        <label for="savings-wage">Stundenlohn (brutto)</label>
+                        <output for="savings-wage">25 €</output>
+                        <input type="range" id="savings-wage" name="wage" min="15" max="80" step="1" value="25">
+                    </div>
+                    <div class="savings-control">
+                        <label for="savings-hours">Gesparte Stunden pro Woche und Mitarbeiter</label>
+                        <output for="savings-hours">3 Std.</output>
+                        <input type="range" id="savings-hours" name="hours" min="0.5" max="20" step="0.5" value="3">
+                    </div>
+                    <div class="savings-control">
+                        <label for="savings-cost">Einmalige Kosten der Automatisierung</label>
+                        <output for="savings-cost">5.000 €</output>
+                        <input type="range" id="savings-cost" name="cost" min="0" max="30000" step="500" value="5000">
+                    </div>
+                    <div class="savings-control">
+                        <label for="savings-years">Betrachteter Zeitraum</label>
+                        <output for="savings-years">5 Jahre</output>
+                        <input type="range" id="savings-years" name="years" min="1" max="10" step="1" value="5">
+                    </div>
+                </div>
+                <p class="savings-note">Beispielrechnung mit 46 Arbeitswochen pro Jahr (52 Wochen abzüglich Urlaub und Feiertagen). Lohnnebenkosten sind nicht eingerechnet, die tatsächliche Ersparnis für Ihren Betrieb liegt daher meist höher. Laufende Kosten wie Hosting (meist 5–30 € im Monat) sind nicht berücksichtigt.</p>
+                <details class="savings-table">
+                    <summary>Werte als Tabelle anzeigen</summary>
+                    <table>
+                        <thead>
+                            <tr><th scope="col">Zeitraum</th><th scope="col">Gespart</th><th scope="col">Stand nach Kosten</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </details>
             </div>
         </section>
 
