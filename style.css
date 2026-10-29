@@ -106,9 +106,18 @@ a {
 }
 
 .wrap {
+    /* Breite der Karussell-Pfeile samt Abstand (siehe .carousel-btn, .carousel) */
+    --carousel-inset: calc(46px + 0.75rem);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.25rem;
+}
+/* Ab 640px stehen die Karussell-Pfeile neben den Karten. Der Inhalt rückt um ihre
+   Breite ein, damit alle Abschnitte mit den Lösungskarten eine Flucht bilden. */
+@media (min-width: 640px) {
+    .wrap {
+        padding: 0 calc(1.25rem + var(--carousel-inset));
+    }
 }
 
 /* Header */
@@ -496,6 +505,8 @@ header .tagline {
 @media (min-width: 640px) {
     .carousel.is-ready {
         grid-template-columns: auto minmax(0, 1fr) auto;
+        /* Pfeile in den Einzug von .wrap schieben, Karten bleiben in der Flucht */
+        margin-inline: calc(-1 * var(--carousel-inset));
     }
     .carousel.is-ready .carousel-btn {
         display: inline-flex;
