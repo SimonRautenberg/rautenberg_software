@@ -13,9 +13,10 @@
  * Jeder Wechsel wird von einer Glitch-Animation begleitet (html.is-glitching, siehe
  * style.css); die Farbe springt genau in deren Mitte. Die Dauer kommt aus der
  * CSS-Variable --glitch-duration.
- * Pro Sitzung (sessionStorage, endet mit dem Tab) wird gemerkt, ob schon gelb bzw.
- * rot gezeigt wurde: Nach Gelb kommt beim nächsten Laden statt Gelb direkt Rot,
- * nach Gelb und Rot bleibt alles blau.
+ * Pro Sitzung (sessionStorage) wird gemerkt, ob schon gelb bzw. rot gezeigt wurde:
+ * Nach Gelb kommt beim nächsten Laden statt Gelb direkt Rot, nach Gelb und Rot
+ * bleibt alles blau. Die Merker verfallen zusätzlich nach FLAG_TTL, weil mobile
+ * Browser Tabs samt sessionStorage auch nach dem Schließen wiederherstellen.
  */
 (function () {
     "use strict";
@@ -29,6 +30,7 @@
     var SCROLL_LOCK = 1000;
     var FOCUS_LOCK = 3000;
     var SCROLL_DURATION = 700;
+    var FLAG_TTL = 30 * 60 * 1000;
 
     var root = document.documentElement;
     var reduceMotion = window.matchMedia &&
@@ -37,9 +39,11 @@
         window.matchMedia("(max-width: 899px)").matches;
 
     // sessionStorage kann gesperrt sein (z. B. privater Modus); dann läuft alles wie ohne Merker.
+    // Gespeichert wird der Zeitpunkt; ältere Merker als FLAG_TTL (und alte "true"-Werte) gelten nicht.
     function getFlag(name) {
         try {
-            return sessionStorage.getItem(name) === "true";
+            var time = parseInt(sessionStorage.getItem(name), 10);
+            return !isNaN(time) && Date.now() - time < FLAG_TTL;
         } catch (e) {
             return false;
         }
@@ -47,7 +51,7 @@
 
     function setFlag(name) {
         try {
-            sessionStorage.setItem(name, "true");
+            sessionStorage.setItem(name, String(Date.now()));
         } catch (e) {}
     }
 
@@ -206,8 +210,12 @@
             if (triggered) {
                 return;
             }
+            // Nur auslösen, solange die Bildmitte in der oberen Bildschirmhälfte sichtbar ist.
+            // Liegt das Bild schon oberhalb des Viewports (z. B. wiederhergestellte Scrollposition
+            // beim Zurück-Navigieren), würde sonst sofort ein Sprung nach oben ausgelöst.
             var rect = image.getBoundingClientRect();
-            if (rect.height > 0 && rect.top + rect.height / 2 <= window.innerHeight / 2) {
+            var center = rect.top + rect.height / 2;
+            if (rect.height > 0 && center >= 0 && center <= window.innerHeight / 2) {
                 trigger();
             }
         }

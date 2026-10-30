@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web-Anwendungen für kleine Unternehmen in Berlin: maßgeschneidert, automatisiert und auf Wunsch mit KI. Direkt vom Entwickler. Kostenloses Erstgespräch vereinbaren.">
     <title>Web-Anwendungen entwickeln lassen in Berlin | Rautenberg Software</title>
-    <link rel="stylesheet" href="style.css?v=20261030a">
+    <link rel="stylesheet" href="style.css?v=20261030g">
     <link rel="preload" href="fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
@@ -21,7 +21,9 @@
     <meta property="og:url" content="https://rautenberg-software-berlin.de/">
     <meta property="og:image" content="https://rautenberg-software-berlin.de/icon-512.png">
     <script src="js/wave-animation.js?v=20261003b" defer></script>
-    <script src="js/theme-switcher.js?v=20261012a" defer></script>
+    <script src="js/theme-switcher.js?v=20261030a" defer></script>
+    <script src="js/compare-bubbles.js?v=20261030e" defer></script>
+    <script src="js/catapult-game.js?v=20261030i" defer></script>
     <script src="js/faq-accordion.js" defer></script>
     <script src="js/carousel.js?v=20261021b" defer></script>
 <script type="application/ld+json">
@@ -76,6 +78,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://rautenberg-software-berlin.de/#organization",
   "name": "Rautenberg Software Berlin",
   "url": "https://rautenberg-software-berlin.de/",
   "logo": "https://rautenberg-software-berlin.de/icon-512.png",
@@ -91,7 +94,16 @@
     "addressCountry": "DE"
   },
   "areaServed": { "@type": "City", "name": "Berlin" },
-  "founder": { "@type": "Person", "name": "Simon Rautenberg", "jobTitle": "Softwareentwickler", "url": "https://rautenberg-software-berlin.de/ueber-mich.html" },
+  "founder": { "@type": "Person", "@id": "https://rautenberg-software-berlin.de/ueber-mich.html#person", "name": "Simon Rautenberg", "jobTitle": "Softwareentwickler", "url": "https://rautenberg-software-berlin.de/ueber-mich.html" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Leistungen",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/web-anwendungen.html#service" } },
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/consulting.html#service" } },
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/wartung-hosting.html#service" } }
+    ]
+  },
   "knowsAbout": ["Web-Anwendungen", "Individualsoftware", "Prozessautomatisierung", "KI-Integration", "Anforderungsanalyse", "Lastenheft", "PHP", "TypeScript"]
 }
 </script>
@@ -117,8 +129,8 @@
         <div class="flex-container-head head_top">
             <div>
                 <p class="eyebrow">Rautenberg Software Berlin</p>
-                <h1>Web-Anwendungen für kleine Unternehmen in Berlin</h1>
-                <p class="tagline">Maßgeschneiderte Programme im Browser, die Ihre Abläufe vereinfachen. Auf Wunsch mit KI.</p>
+                <h1>Individuelle Webanwendungen für kleine und mittlere Unternehmen in Berlin</h1>
+                <p class="tagline">Maßgeschneiderte Programme, die Ihre Abläufe vereinfachen.</p>
             </div>
             <img src="bilder/rautenberg_logo_white.png" alt="Rautenberg Software Logo" id="logo" width="572" height="543">
         </div>
@@ -164,6 +176,61 @@
             </div>
         </section>
 
+        <section class="wrap compare" aria-labelledby="compare-title">
+            <div class="section-head">
+                <p class="eyebrow">Unterschied</p>
+                <h2 id="compare-title">Webseite oder Web-Anwendung?</h2>
+            </div>
+            <div class="compare-grid">
+                <article class="compare-card">
+                    <h3>Webseite</h3>
+                    <p class="compare-lead">Informiert Ihre Besucher.</p>
+                    <ul>
+                        <li>Zeigt Inhalte wie Leistungen, Öffnungszeiten oder Kontaktdaten</li>
+                        <li>Alle Besucher sehen dieselben Inhalte</li>
+                        <li>Besucher lesen, klicken und rufen an oder schreiben eine E-Mail</li>
+                        <li>Beispiel: Ihre Firmenvisitenkarte im Internet</li>
+                    </ul>
+                </article>
+                <article class="compare-card compare-card--app">
+                    <h3>Web-Anwendung</h3>
+                    <p class="compare-lead">Erledigt Arbeit für Sie und Ihre Kunden.</p>
+                    <ul>
+                        <li>Nimmt Eingaben entgegen, rechnet, speichert und verarbeitet Daten</li>
+                        <li>Jeder Nutzer sieht seine eigenen Daten, Aufträge oder Termine</li>
+                        <li>Ist an eine Datenbank angebunden und automatisiert Abläufe</li>
+                        <li>Beispiel: Angebotsrechner, Buchungssystem oder Auftragsverwaltung</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="compare-hint" hidden>Probieren Sie es aus: Tippen Sie in eine der beiden Karten.</p>
+            <p class="compare-note">
+                Beides läuft im Browser, ohne Installation. Die Grenze ist fließend: Eine Webseite kann einzelne Funktionen einer Web-Anwendung enthalten, etwa einen Rechner oder ein Buchungsformular.
+            </p>
+        </section>
+
+        <!-- Minispiel: Katapult gegen Bauklotz-Pyramide (js/catapult-game.js, Physik: js/vendor/matter.min.js) -->
+        <section class="wrap game" aria-labelledby="game-title">
+            <p class="game-title" id="game-title">Bringen Sie die Pyramide zum Einstürzen!</p>
+            <div class="game-stage">
+                <svg class="game-svg" viewBox="0 0 800 300" role="img" aria-label="Minispiel: Ein Katapult schießt eine Kugel auf eine Pyramide aus Bauklötzen">
+                    <line class="game-ground" x1="0" y1="270" x2="800" y2="270"/>
+                    <rect class="game-wall" rx="3"/>
+                    <g class="game-ammo"></g>
+                    <g class="game-shots"></g>
+                    <g class="game-catapult" transform="translate(110 270)">
+                        <path d="M0 0V-45M0-45-12-80M0-45 12-80"/>
+                    </g>
+                    <line class="game-band" data-band="back" x1="98" y1="190" x2="110" y2="192"/>
+                    <circle class="game-ball" cx="110" cy="192" r="9"/>
+                    <line class="game-band" data-band="front" x1="122" y1="190" x2="110" y2="192"/>
+                    <g class="game-blocks"></g>
+                </svg>
+                <div class="game-grab" aria-hidden="true"></div>
+            </div>
+            <p class="game-status" aria-live="polite">Ziehen Sie die Kugel nach hinten und lassen Sie los.</p>
+        </section>
+
         <section class="wrap services" aria-labelledby="services-title">
             <div class="section-head">
                 <p class="eyebrow">Leistungen</p>
@@ -188,6 +255,8 @@
                     <h3>Lastenheft &amp; Ideen ordnen</h3>
                     <p>
                         Sie haben eine Idee für eine Software, aber sie ist noch nicht greifbar?
+                        In einem gemeinsamen Workshop setzen wir uns zusammen und finden heraus, was Ihr Unternehmen wirklich braucht.
+                        So wird aus einem vagen Gedanken ein greifbares Ziel, ganz ohne Fachchinesisch.
                         Ich helfe Ihnen, Ihre Wünsche zu sortieren und daraus ein klares Lastenheft zu machen.
                         Damit können Sie die Umsetzung bei mir oder bei jedem anderen Anbieter anfragen.
                     </p>
@@ -201,6 +270,8 @@
                         Sie haben Software, die regelmäßig die Aufmerksamkeit eines Informatikers benötigt?
                         Sie möchten eine Web-Anwendung betreiben und wissen nicht, wie?
                         Ich übernehme gerne die Wartung und den Betrieb Ihrer Software, damit alles rund läuft und Sie sich keine Sorgen machen müssen.
+                        Gute Nachricht: Viele Web-Anwendungen lassen sich einfach und kostengünstig auf einem Server in Deutschland betreiben.
+                        So bleiben Ihre Daten im Land und Sie sind auf der sicheren Seite beim Datenschutz.
                     </p>
                     <a class="card-more" href="wartung-hosting.html">Mehr zu Wartung &amp; Hosting<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                     <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>

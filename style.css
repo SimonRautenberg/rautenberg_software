@@ -256,6 +256,146 @@ header .tagline {
     }
 }
 
+/* Unterschied Webseite / Web-Anwendung */
+.compare {
+    padding-bottom: 4rem;
+}
+.compare-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+@media (min-width: 640px) {
+    .compare-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.compare-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--ice);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+}
+/* Kreise aus js/compare-bubbles.js liegen hinter dem Karteninhalt */
+.compare-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.compare-card > :not(.compare-canvas) {
+    position: relative;
+}
+/* Klick in eine Karte schießt einen Kreis in die andere (nur wenn Animation aktiv) */
+.compare-card.is-shooter {
+    cursor: pointer;
+}
+.compare-card h3 {
+    color: var(--deep);
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-bottom: 0.3rem;
+}
+.compare-lead {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.compare-card ul {
+    display: grid;
+    gap: 0.6rem;
+    padding-left: 1.2rem;
+    line-height: 1.55;
+}
+.compare-card--app {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--on-primary);
+}
+.compare-card--app h3 {
+    color: inherit;
+}
+.compare-hint {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 0.75rem;
+}
+.compare-note {
+    max-width: 62ch;
+    margin-top: 1.5rem;
+}
+
+/* Minispiel: Katapult und Bauklotz-Pyramide (js/catapult-game.js) */
+.game {
+    padding-bottom: 4rem;
+}
+.game-title {
+    color: var(--deep);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+.game-stage {
+    position: relative;
+}
+.game-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+.game-ground {
+    stroke: var(--blue);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+.game-block {
+    fill: var(--blue);
+    stroke: var(--white);
+    stroke-width: 1.5;
+}
+/* Mauer mittig zwischen Katapult und Pyramide */
+.game-wall {
+    fill: var(--deep);
+}
+.game-catapult path {
+    fill: none;
+    stroke: var(--deep);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.game-band {
+    stroke: var(--accent);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+.game-ball {
+    fill: var(--deep);
+}
+/* Greifzone um das Katapult; touch-action nur hier, damit die Seite sonst scrollbar bleibt */
+.game-grab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    touch-action: none;
+    cursor: grab;
+}
+.game-grab.is-dragging {
+    cursor: grabbing;
+}
+.game-status {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 0.5rem;
+    min-height: 1.5em;
+}
+
 /* Leistungen: blaue Wellen-Karten */
 .services {
     padding-bottom: 4rem;
