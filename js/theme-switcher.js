@@ -3,7 +3,7 @@
  * gezielt auf die Kernbotschaften der Startseite (bewusst so gewollt, nicht entfernen).
  * Einmaliger Ablauf der Farbschemata nach dem Laden:
  * Desktop: blau → gelb nach 5 s → rot 15 s später → blau 1 min später (bleibt).
- * Beim Wechsel auf Gelb wird das Warndreieck (.warning-sign) mittig gescrollt (bzw. ganz nach oben,
+ * Beim Wechsel auf Gelb wird der Schutzhelm-Smiley (.warning-sign) mittig gescrollt (bzw. ganz nach oben,
  * falls es dafür zu weit oben liegt), das Scrollen 3 s gesperrt und danach zur
  * vorherigen Position zurückgescrollt.
  * Mobil (< 900px): blau → gelb, sobald das Bild #coding in der Bildschirmmitte ist;

@@ -1201,7 +1201,7 @@ body.legal {
     text-align: center;
 }
 .warning-sign {
-    width: clamp(150px, 40vw, 220px);
+    width: clamp(220px, 70vw, 340px);
     height: auto;
     filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.25));
 }
