@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Individuelle Software, Web-Apps, Onlineshops &amp; Automatisierung für kleine Unternehmen in Berlin. Direkt vom Entwickler. Kostenloses Erstgespräch vereinbaren.">
-    <title>Softwareentwicklung Berlin für KMU | Rautenberg Software</title>
-    <link rel="stylesheet" href="style.css?v=20261021c">
+    <meta name="description" content="Web-Anwendungen für kleine Unternehmen in Berlin: maßgeschneidert, automatisiert und auf Wunsch mit KI. Direkt vom Entwickler. Kostenloses Erstgespräch vereinbaren.">
+    <title>Web-Anwendungen entwickeln lassen in Berlin | Rautenberg Software</title>
+    <link rel="stylesheet" href="style.css?v=20261030g">
     <link rel="preload" href="fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
@@ -16,12 +16,14 @@
     <link rel="canonical" href="https://rautenberg-software-berlin.de/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="Softwareentwicklung Berlin für KMU | Rautenberg Software">
-    <meta property="og:description" content="Individuelle Software, Web-Apps, Onlineshops &amp; Automatisierung. Direkt vom Entwickler.">
+    <meta property="og:title" content="Web-Anwendungen entwickeln lassen in Berlin | Rautenberg Software">
+    <meta property="og:description" content="Web-Anwendungen für kleine Unternehmen, die Abläufe automatisieren, auf Wunsch mit KI. Direkt vom Entwickler.">
     <meta property="og:url" content="https://rautenberg-software-berlin.de/">
     <meta property="og:image" content="https://rautenberg-software-berlin.de/icon-512.png">
     <script src="js/wave-animation.js?v=20261003b" defer></script>
-    <script src="js/theme-switcher.js?v=20261012a" defer></script>
+    <script src="js/theme-switcher.js?v=20261030a" defer></script>
+    <script src="js/compare-bubbles.js?v=20261030e" defer></script>
+    <script src="js/catapult-game.js?v=20261030i" defer></script>
     <script src="js/faq-accordion.js" defer></script>
     <script src="js/carousel.js?v=20261021b" defer></script>
 <script type="application/ld+json">
@@ -76,10 +78,11 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://rautenberg-software-berlin.de/#organization",
   "name": "Rautenberg Software Berlin",
   "url": "https://rautenberg-software-berlin.de/",
   "logo": "https://rautenberg-software-berlin.de/icon-512.png",
-  "description": "Individuelle Softwareentwicklung, Web-Anwendungen, Online-Shops und Automatisierung für kleine und mittlere Unternehmen.",
+  "description": "Individuelle Web-Anwendungen für kleine und mittlere Unternehmen, mit Automatisierung und auf Wunsch mit KI. Dazu Hilfe beim Lastenheft sowie Wartung und Hosting.",
   "telephone": "+49 176 87645326",
   "email": "rautenberg-software-berlin@outlook.de",
   "priceRange": "ab 80 € / Stunde",
@@ -91,8 +94,17 @@
     "addressCountry": "DE"
   },
   "areaServed": { "@type": "City", "name": "Berlin" },
-  "founder": { "@type": "Person", "name": "Simon Rautenberg", "jobTitle": "Softwareentwickler", "url": "https://rautenberg-software-berlin.de/ueber-mich.html" },
-  "knowsAbout": ["Individualsoftware", "Web-Anwendungen", "Online-Shops", "Prozessautomatisierung", "KI-Integration", "PHP", "TypeScript"]
+  "founder": { "@type": "Person", "@id": "https://rautenberg-software-berlin.de/ueber-mich.html#person", "name": "Simon Rautenberg", "jobTitle": "Softwareentwickler", "url": "https://rautenberg-software-berlin.de/ueber-mich.html" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Leistungen",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/web-anwendungen.html#service" } },
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/consulting.html#service" } },
+      { "@type": "Offer", "itemOffered": { "@id": "https://rautenberg-software-berlin.de/wartung-hosting.html#service" } }
+    ]
+  },
+  "knowsAbout": ["Web-Anwendungen", "Individualsoftware", "Prozessautomatisierung", "KI-Integration", "Anforderungsanalyse", "Lastenheft", "PHP", "TypeScript"]
 }
 </script>
 </head>
@@ -100,8 +112,6 @@
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
         <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><path d="m10 12.5-2 2 2 2"/><path d="m14 12.5 2 2-2 2"/></symbol>
-        <symbol id="i-shop" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
-        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
         <symbol id="i-auto" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9"/><path d="M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3v4.2h-4.2"/><path d="M5.5 21v-4.2h4.2"/><circle cx="12" cy="12" r="2.5"/></symbol>
         <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/></symbol>
         <symbol id="i-talk" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20V5z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
@@ -119,8 +129,8 @@
         <div class="flex-container-head head_top">
             <div>
                 <p class="eyebrow">Rautenberg Software Berlin</p>
-                <h1>Individuelle Softwareentwicklung für kleine Unternehmen in Berlin</h1>
-                <p class="tagline">Software-Lösungen für kleine und mittlere Unternehmen aus einer Hand.</p>
+                <h1>Individuelle Webanwendungen für kleine und mittlere Unternehmen in Berlin</h1>
+                <p class="tagline">Maßgeschneiderte Programme, die Ihre Abläufe vereinfachen.</p>
             </div>
             <img src="bilder/rautenberg_logo_white.png" alt="Rautenberg Software Logo" id="logo" width="572" height="543">
         </div>
@@ -133,12 +143,13 @@
             <div class="intro-text">
                 <ul class="intro-questions">
                     <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie möchten wiederkehrende Aufgaben automatisieren, Zeit sparen und Fehler reduzieren?</li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie möchten einen Onlineshop aufbauen, um auch außerhalb Ihrer Öffnungszeiten zu verkaufen?</li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Ihre Kunden sollen online selbst Preise berechnen, Termine buchen oder Unterlagen hochladen können?</li>
                     <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie benötigen ein System, um Produkte, Aufträge oder interne Abläufe besser zu verwalten?</li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Sie möchten, dass alle Ihre Mitarbeiter auf einheitliche Daten zugreifen?</li>
                 </ul>
                 <p>
                     Rautenberg Software ist eine Einzelunternehmung aus Berlin. Ich unterstütze kleine und mittelständische Unternehmen bei der Digitalisierung und Automatisierung ihrer Geschäftsprozesse.
-                    Dazu entwickle ich maßgeschneiderte Webanwendungen, Shopsysteme und Automatisierungen, die auf den jeweiligen Ablauf des Unternehmens zugeschnitten sind.
+                    Dazu entwickle ich maßgeschneiderte Web-Anwendungen, die auf den jeweiligen Ablauf des Unternehmens zugeschnitten sind und Routinearbeit automatisch erledigen, wo es sinnvoll ist auch mit KI.
                     Von der ersten Idee über die Entwicklung bis hin zum Betrieb und der Weiterentwicklung.
                     Als Einzelunternehmer gibt es keine Umwege in der Kommunikation: Sie sprechen direkt mit der Person, die Ihr Projekt entwickelt und umsetzt.
                     <a href="ueber-mich.html">Mehr über mich und meinen Werdegang</a>
@@ -165,56 +176,91 @@
             </div>
         </section>
 
+        <section class="wrap compare" aria-labelledby="compare-title">
+            <div class="section-head">
+                <p class="eyebrow">Unterschied</p>
+                <h2 id="compare-title">Webseite oder Web-Anwendung?</h2>
+            </div>
+            <div class="compare-grid">
+                <article class="compare-card">
+                    <h3>Webseite</h3>
+                    <p class="compare-lead">Informiert Ihre Besucher.</p>
+                    <ul>
+                        <li>Zeigt Inhalte wie Leistungen, Öffnungszeiten oder Kontaktdaten</li>
+                        <li>Alle Besucher sehen dieselben Inhalte</li>
+                        <li>Besucher lesen, klicken und rufen an oder schreiben eine E-Mail</li>
+                        <li>Beispiel: Ihre Firmenvisitenkarte im Internet</li>
+                    </ul>
+                </article>
+                <article class="compare-card compare-card--app">
+                    <h3>Web-Anwendung</h3>
+                    <p class="compare-lead">Erledigt Arbeit für Sie und Ihre Kunden.</p>
+                    <ul>
+                        <li>Nimmt Eingaben entgegen, rechnet, speichert und verarbeitet Daten</li>
+                        <li>Jeder Nutzer sieht seine eigenen Daten, Aufträge oder Termine</li>
+                        <li>Ist an eine Datenbank angebunden und automatisiert Abläufe</li>
+                        <li>Beispiel: Angebotsrechner, Buchungssystem oder Auftragsverwaltung</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="compare-hint" hidden>Probieren Sie es aus: Tippen Sie in eine der beiden Karten.</p>
+            <p class="compare-note">
+                Beides läuft im Browser, ohne Installation. Die Grenze ist fließend: Eine Webseite kann einzelne Funktionen einer Web-Anwendung enthalten, etwa einen Rechner oder ein Buchungsformular.
+            </p>
+        </section>
+
+        <!-- Minispiel: Katapult gegen Bauklotz-Pyramide (js/catapult-game.js, Physik: js/vendor/matter.min.js) -->
+        <section class="wrap game" aria-labelledby="game-title">
+            <p class="game-title" id="game-title">Bringen Sie die Pyramide zum Einstürzen!</p>
+            <div class="game-stage">
+                <svg class="game-svg" viewBox="0 0 800 300" role="img" aria-label="Minispiel: Ein Katapult schießt eine Kugel auf eine Pyramide aus Bauklötzen">
+                    <line class="game-ground" x1="0" y1="270" x2="800" y2="270"/>
+                    <rect class="game-wall" rx="3"/>
+                    <g class="game-ammo"></g>
+                    <g class="game-shots"></g>
+                    <g class="game-catapult" transform="translate(110 270)">
+                        <path d="M0 0V-45M0-45-12-80M0-45 12-80"/>
+                    </g>
+                    <line class="game-band" data-band="back" x1="98" y1="190" x2="110" y2="192"/>
+                    <circle class="game-ball" cx="110" cy="192" r="9"/>
+                    <line class="game-band" data-band="front" x1="122" y1="190" x2="110" y2="192"/>
+                    <g class="game-blocks"></g>
+                </svg>
+                <div class="game-grab" aria-hidden="true"></div>
+            </div>
+            <p class="game-status" aria-live="polite">Ziehen Sie die Kugel nach hinten und lassen Sie los.</p>
+        </section>
+
         <section class="wrap services" aria-labelledby="services-title">
             <div class="section-head">
                 <p class="eyebrow">Leistungen</p>
-                <h2 id="services-title">Was ich für Sie entwickle</h2>
+                <h2 id="services-title">Was ich für Sie tue</h2>
             </div>
             <div class="card-grid">
                 <article class="wave-card">
                     <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-web"/></svg></span>
-                    <h3>Web-Anwendungen</h3>
+                    <h3>Web-Anwendungen, auch mit KI</h3>
                     <p>
                         Sie möchten eine Webseite, die mehr kann als einfach nur hübsch auszusehen?
                         Sie brauchen eine Berechnung, wie z. B. einen Angebotsrechner?
                         Sie möchten eine Webseite mit einer Datenbankanbindung, um Vorgänge zu synchronisieren?
-                        Ich entwickle Ihnen auch gerne Lösungen für Ihre komplexen Probleme.
+                        Sie möchten wiederkehrende Aufgaben automatisieren, auf Wunsch auch mit KI?
+                        Ich entwickle Ihnen gerne eine Web-Anwendung, die genau zu Ihrem Betrieb passt.
                     </p>
                     <a class="card-more" href="web-anwendungen.html">Mehr zu Web-Anwendungen<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                     <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
                 </article>
                 <article class="wave-card">
-                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-shop"/></svg></span>
-                    <h3>Online-Shops</h3>
+                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-talk"/></svg></span>
+                    <h3>Lastenheft &amp; Ideen ordnen</h3>
                     <p>
-                        Sie möchten einen Onlineshop eröffnen, um Ihre Reichweite zu erhöhen und außerhalb Ihrer Öffnungszeiten zu verkaufen?
-                        Ich erstelle Ihnen gerne einen Onlineshop nach Ihren Vorstellungen.
-                        Ein einfaches Grundgerüst zu erstellen dauert nur wenige Tage.
+                        Sie haben eine Idee für eine Software, aber sie ist noch nicht greifbar?
+                        In einem gemeinsamen Workshop setzen wir uns zusammen und finden heraus, was Ihr Unternehmen wirklich braucht.
+                        So wird aus einem vagen Gedanken ein greifbares Ziel, ganz ohne Fachchinesisch.
+                        Ich helfe Ihnen, Ihre Wünsche zu sortieren und daraus ein klares Lastenheft zu machen.
+                        Damit können Sie die Umsetzung bei mir oder bei jedem anderen Anbieter anfragen.
                     </p>
-                    <a class="card-more" href="online-shops.html">Mehr zu Online-Shops<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
-                </article>
-                <article class="wave-card">
-                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
-                    <h3>SEO</h3>
-                    <p>
-                        Sie möchten mehr Sichtbarkeit, damit Ihre Kunden Sie finden?
-                        Eine gezielte Suchmaschinenoptimierung sorgt dafür,
-                        dass Ihre Webseite genau dann erscheint, wenn potenzielle Kunden nach Ihren Leistungen suchen.
-                        Erhöhte Sichtbarkeit führt dazu, dass mehr Interessenten auf Ihre Seite gelangen.
-                        Damit steigt die Chance auf Anfragen, Verkäufe und langfristige Kundenbeziehungen.
-                    </p>
-                    <a class="card-more" href="seo.html">Mehr zu SEO<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
-                </article>
-                <article class="wave-card">
-                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-auto"/></svg></span>
-                    <h3>(KI-)Automatisierung</h3>
-                    <p>
-                        Sie möchten wiederkehrende Aufgaben, die Sie haben, automatisieren, um Zeit zu sparen und Fehler zu vermeiden?
-                        Gerne entwickle ich Ihnen eine effiziente und zuverlässige Lösung, die Ihre Abläufe vereinfacht und Sie dauerhaft entlastet.
-                    </p>
-                    <a class="card-more" href="automatisierung.html">Mehr zur Automatisierung<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    <a class="card-more" href="consulting.html">Mehr zum Lastenheft<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                     <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
                 </article>
                 <article class="wave-card">
@@ -224,20 +270,10 @@
                         Sie haben Software, die regelmäßig die Aufmerksamkeit eines Informatikers benötigt?
                         Sie möchten eine Web-Anwendung betreiben und wissen nicht, wie?
                         Ich übernehme gerne die Wartung und den Betrieb Ihrer Software, damit alles rund läuft und Sie sich keine Sorgen machen müssen.
+                        Gute Nachricht: Viele Web-Anwendungen lassen sich einfach und kostengünstig auf einem Server in Deutschland betreiben.
+                        So bleiben Ihre Daten im Land und Sie sind auf der sicheren Seite beim Datenschutz.
                     </p>
                     <a class="card-more" href="wartung-hosting.html">Mehr zu Wartung &amp; Hosting<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                    <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
-                </article>
-                <article class="wave-card">
-                    <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-talk"/></svg></span>
-                    <h3>Consulting</h3>
-                    <p>
-                        Sie haben technische Fragen? Sie möchten wissen, ob etwas machbar ist?
-                        Ich helfe Ihnen gerne beim Finden einer Antwort.
-                        Wenn Sie eine IT-Firma beauftragen wollen, helfe ich Ihnen gerne beim Erstellen eines Lastenheftes.
-                        Melden Sie sich ruhig, wenn Sie technische Beratung brauchen.
-                    </p>
-                    <a class="card-more" href="consulting.html">Mehr zum Consulting<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                     <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
                 </article>
             </div>
@@ -330,14 +366,6 @@
                         <h3>Arbeitszeiten und Baustellenberichte digital erfassen</h3>
                         <p>Zeiten, Material und Fotos werden per Handy erfasst. Im Büro liegt der fertige Bericht, bereit für die Rechnung.</p>
                         <a class="card-more" href="loesungen/arbeitszeiten-baustellenberichte-digital-erfassen.html">Lösung ansehen<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                        <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
-                    </article>
-                    <article class="wave-card">
-                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-shop"/></svg></span>
-                        <p class="example-tag">Restaurants, Cafés, Imbisse</p>
-                        <h3>QR-Code-Bestellsystem fürs Restaurant</h3>
-                        <p>Gäste scannen den QR-Code am Tisch, bestellen und bezahlen per PayPal. Die Bestellung geht direkt in die Küche.</p>
-                        <a class="card-more" href="loesungen/qr-code-bestellsystem-restaurant.html">Lösung ansehen<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                         <div class="card-wave"><canvas class="wave-canvas" data-wave="card"></canvas></div>
                     </article>
                 </div>
